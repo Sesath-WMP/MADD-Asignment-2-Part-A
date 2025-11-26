@@ -1,103 +1,113 @@
-iOS Event Discovery App – SE4041 Assignment 2 (Part A)
+This project was generated to meet the SE4041 Assignment 02 Part A requirements (source: /mnt/data/Assignment 02 - 2025-2.pdf).
 
-LocalEventFinder is an iOS application built using SwiftUI, MapKit, and Core Data. It allows users to discover local events via a map-based interface, browse event lists, view detailed event information, and save favourites for later.
+# LocalEventFinder
 
-🚀 Features
-Core Features
+- **Platforms**: iPhone & iPad (iOS 17)
+- **Tech**: Swift 5, SwiftUI, MVVM, Core Data, MapKit
+- **Persistence**: Programmatic Core Data model with lightweight migration
+- **Accessibility**: Dynamic Type, labels, hints, dark mode support
 
-Interactive Map View with event pins
+## Features
+- **MapHomeView**: Full-screen MapKit with custom color-coded annotations, animated mini-preview, FAB refresh, and navigation to details.
+- **EventListView**: Live search, segmented date filters (All/Today/This Week), sort menu, pull-to-refresh (mock network), animated cards.
+- **EventDetailView**: Large image header, title, date/time, embedded map snapshot, share, and Save/Unsave via Core Data.
+- **SavedEventsView**: Saved list with swipe-to-delete, context menu.
 
-Scrollable Event List with filters (All / Today / This Week)
+## Architecture
+- **MVVM** with dedicated `ViewModels` for each screen.
+- **Services**: `NetworkService` + `MockNetworkService` for local JSON and placeholder remote fetching, `CoreDataService` for persistence.
+- **Dependency Injection**: Services are constructed in `App.swift` and passed into view models.
 
-Event Details (image, time, date, description, location)
+## Folder Structure
+- LocalEventFinder/
+  - App.swift
+  - Info.plist
+  - Assets.xcassets/
+  - Components/
+  - Modifiers/
+  - Models/
+  - Services/
+  - ViewModels/
+  - Scenes/
+  - Resources/
+  - Tests/
+- scripts/
+- Report.md
+- AI-Assistance-Log.md
+- .gitignore
 
-Save / Unsave favourites (Core Data persistence)
+## Setup
+1. Open the folder in Xcode 15 (iOS 17).
+2. Ensure `Placeholder` image exists (a blank PNG is fine) in `Assets.xcassets/Placeholder.imageset/placeholder.png`. If missing, Xcode will still compile; the UI will show empty image.
+3. Run on any iPhone/iPad simulator.
 
-Search bar & category filters
+## MapKit Simulation
+- The app displays seeded events as pins without requiring user location.
+- You can enable the “Simulate Location” feature in Xcode if needed.
 
-Pull-to-refresh (simulated network)
+## How to Run Tests
+- Product > Test (⌘U).
+- Unit tests use an in-memory Core Data store for deterministic results.
+- UI tests validate basic navigation and interactions.
 
-Smooth SwiftUI navigation using NavigationStack
+## Core Data Notes
+- Programmatic model created in `CoreDataService.makeModel()`.
+- Entity: `EventEntity` with attributes [id, title_, details_, startDate, endDate, latitude, longitude, category, imageName, isSaved, createdAt].
+- Mapping to `EventDTO` via `EventEntity.toDTO()` and `apply(from:)`.
+- To reset data, run `scripts/reset_coredata.sh`.
 
-Advanced iOS Technologies
+## Seeding
+- `Resources/SeedEvents.json` contains 10 events (Music, Sports, Arts, Tech).
+- On first launch, if Core Data is empty, data is loaded from seed.
 
-MapKit (emerging tech requirement)
+## Accessibility & Design
+- Dynamic Type friendly fonts.
+- Accessibility labels and hints on interactive elements.
+- Dark mode via system colors.
+- Color palette (example):
+  - Primary: #0A5C50
+  - Accent: #D7FF5E
+  - Background: systemBackground variants
 
-Core Data for offline storage
+## Badges / Metrics (placeholders)
+- Build: passing
+- Code Coverage: 85%
+- Lint: clean
 
-Custom SwiftUI components
+## Performance Tips
+- Use Instruments (Time Profiler, Allocations).
+- Avoid heavy work on main thread; `@MainActor` used for UI-bound VM updates.
+- Images are local and loaded lazily by SwiftUI.
 
-Lightweight mock networking using local JSON
+## Reset/Seed Data
+- `scripts/reset_coredata.sh` removes the app container from Simulator or resets store on device builds (commented steps).
 
-🧱 Architecture
+## Demo Script (3 minutes)
+1. Launch app to MapHome (see pins).
+2. Tap a pin to open mini-preview; open details.
+3. Save/Unsave event and share.
+4. Return, hit FAB to refresh.
+5. Switch to List: search “Tech”, change filter to Today/This Week, show sorting.
+6. Open detail from list.
+7. Open Saved tab: show saved items and swipe-to-delete.
 
-Pattern: MVVM
+## Git Branch Layout (recommended)
+- `main` (stable)
+- `feature/map`
+- `feature/coredata`
+- `feature/ui`
+- `feature/tests`
 
-Views: MapHomeView, EventListView, EventDetailView, SavedEventsView
+## Commit Message Examples
+- feat(coredata): add programmatic model and persistence
+- feat(map): add annotations and mini preview
+- feat(ui): implement EventListView with filters and sort
+- test(core): add in-memory CRUD tests
+- chore(ci): add scripts and docs
 
-ViewModels: One per screen
+## Info.plist Keys
+- `NSLocationWhenInUseUsageDescription` – if enabling user location.
+- `NSCalendarsUsageDescription` – for EventKit add-to-calendar (placeholder in code).
 
-Services:
-
-CoreDataService
-
-NetworkService (mock)
-
-Models: Event, EventCategory
-
-🎨 UI / UX
-
-Clean, modern iOS 17 SwiftUI design
-
-Map-based event discovery
-
-Animated event cards
-
-Light & Dark mode support
-
-VoiceOver & accessibility labels
-
-Dynamic Type text scaling
-
-🧪 Testing
-Unit Tests
-
-Core Data CRUD operations
-
-Event filtering logic
-
-Favourite toggling
-
-UI Tests
-
-Navigation flow
-
-Save/unsave behaviour
-
-Map/List consistency
-
-📦 Installation & Running
-
-Clone the repository
-
-Open the project in Xcode (iOS 17 recommended)
-
-Run on iPhone/iPad simulator
-
-Events are loaded from SeedEvents.json
-
-📁 Project Structure
-LocalEventFinder/
- ├── App.swift
- ├── Models/
- ├── ViewModels/
- ├── Views/
- ├── Services/
- ├── Resources/SeedEvents.json
- ├── Assets.xcassets
- ├── Tests/
- └── README.md
-
-📝 AI Assistance
-
-AI tools (ChatGPT & Windsurf) were used for code scaffolding, UI ideas, and documentation support. All logic and architecture were customized, validated, and refined manually.
+## AI Assistance Log
+See AI-Assistance-Log.md.
