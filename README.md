@@ -1,34 +1,33 @@
-LocalEventFinder
 iOS Event Discovery App – SE4041 Assignment 2 (Part A)
 
-LocalEventFinder is an iOS application developed using SwiftUI, MapKit, and Core Data, designed to help users discover nearby events through an interactive map and list interface. Users can explore events, view details, and save favourites for later.
+LocalEventFinder is an iOS application built using SwiftUI, MapKit, and Core Data. It allows users to discover local events via a map-based interface, browse event lists, view detailed event information, and save favourites for later.
 
 🚀 Features
-Core Functionality
+Core Features
 
 Interactive Map View with event pins
 
-Detailed Event View (images, date, time, location, description)
+Scrollable Event List with filters (All / Today / This Week)
 
-Scrollable List View with filtering (All / Today / This Week)
+Event Details (image, time, date, description, location)
 
-Saving/unsaving favourites (persisted using Core Data)
+Save / Unsave favourites (Core Data persistence)
 
-Search bar + category chips
+Search bar & category filters
 
-Pull-to-refresh (simulated network fetch)
+Pull-to-refresh (simulated network)
 
-Smooth navigation using NavigationStack
+Smooth SwiftUI navigation using NavigationStack
 
-Advanced iOS / Emerging Tech Used
+Advanced iOS Technologies
 
-MapKit for mapping & geospatial features
+MapKit (emerging tech requirement)
 
-Custom annotations & map snapshots
+Core Data for offline storage
 
-Core Data for offline persistence
+Custom SwiftUI components
 
-Custom animations & SwiftUI components
+Lightweight mock networking using local JSON
 
 🧱 Architecture
 
@@ -36,27 +35,29 @@ Pattern: MVVM
 
 Views: MapHomeView, EventListView, EventDetailView, SavedEventsView
 
-ViewModels: One per major screen
-
-Models: Event, EventCategory
+ViewModels: One per screen
 
 Services:
 
-CoreDataService – persistence
+CoreDataService
 
-NetworkService – mock API + local JSON loading
+NetworkService (mock)
+
+Models: Event, EventCategory
 
 🎨 UI / UX
 
-Clean, modern SwiftUI layout
+Clean, modern iOS 17 SwiftUI design
 
-Dynamic Type support
+Map-based event discovery
 
-Light/Dark mode
+Animated event cards
 
-Smooth animations (matchedGeometryEffect on cards)
+Light & Dark mode support
 
-VoiceOver-friendly labels
+VoiceOver & accessibility labels
+
+Dynamic Type text scaling
 
 🧪 Testing
 Unit Tests
@@ -71,11 +72,21 @@ UI Tests
 
 Navigation flow
 
-Save/unsave actions
+Save/unsave behaviour
 
-List & map consistency
+Map/List consistency
 
-📁 Folder Structure
+📦 Installation & Running
+
+Clone the repository
+
+Open the project in Xcode (iOS 17 recommended)
+
+Run on iPhone/iPad simulator
+
+Events are loaded from SeedEvents.json
+
+📁 Project Structure
 LocalEventFinder/
  ├── App.swift
  ├── Models/
@@ -87,20 +98,6 @@ LocalEventFinder/
  ├── Tests/
  └── README.md
 
-📦 Installation & Running
-
-Clone the repository
-
-Open LocalEventFinder.xcodeproj
-
-Run on iOS Simulator (iOS 17 recommended)
-
-Works on:
-
-iPhone
-
-iPad
-
 📝 AI Assistance
 
-Some boilerplate sections (UI scaffolding, SwiftUI templates, and documentation outlines) were generated with AI assistance (ChatGPT, Windsurf AI). All logic and structure were independently validated and modified.
+AI tools (ChatGPT & Windsurf) were used for code scaffolding, UI ideas, and documentation support. All logic and architecture were customized, validated, and refined manually.
