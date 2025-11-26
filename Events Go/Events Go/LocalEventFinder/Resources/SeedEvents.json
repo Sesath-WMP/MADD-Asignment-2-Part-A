@@ -1,0 +1,112 @@
+[
+  {
+    "id": "11111111-1111-1111-1111-111111111111",
+    "title": "Sunset Jazz Night",
+    "details": "Relaxing jazz by local bands, open-air venue.",
+    "startDate": "2025-12-10T18:00:00Z",
+    "endDate": "2025-12-10T21:00:00Z",
+    "latitude": 6.9271,
+    "longitude": 79.8612,
+    "category": "Music",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "22222222-2222-2222-2222-222222222222",
+    "title": "Tech Meetup: SwiftUI",
+    "details": "Hands-on session exploring SwiftUI best practices.",
+    "startDate": "2025-12-11T14:00:00Z",
+    "endDate": "2025-12-11T16:00:00Z",
+    "latitude": 6.9355,
+    "longitude": 79.8487,
+    "category": "Tech",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "33333333-3333-3333-3333-333333333333",
+    "title": "Community Art Walk",
+    "details": "Explore local galleries and street art installations.",
+    "startDate": "2025-12-12T10:00:00Z",
+    "endDate": null,
+    "latitude": 6.9147,
+    "longitude": 79.9733,
+    "category": "Arts",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "44444444-4444-4444-4444-444444444444",
+    "title": "Football 5s Tournament",
+    "details": "Casual 5-a-side matches, mixed teams welcome.",
+    "startDate": "2025-12-09T12:00:00Z",
+    "endDate": "2025-12-09T15:00:00Z",
+    "latitude": 6.8442,
+    "longitude": 79.8775,
+    "category": "Sports",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "55555555-5555-5555-5555-555555555555",
+    "title": "Open Mic Night",
+    "details": "Share poetry, comedy, or music. All levels welcome.",
+    "startDate": "2025-12-15T17:00:00Z",
+    "endDate": "2025-12-15T19:00:00Z",
+    "latitude": 7.2906,
+    "longitude": 80.6337,
+    "category": "Arts",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "66666666-6666-6666-6666-666666666666",
+    "title": "Marathon Training Run",
+    "details": "Group long run along the scenic route.",
+    "startDate": "2025-12-08T05:30:00Z",
+    "endDate": null,
+    "latitude": 7.8731,
+    "longitude": 80.7718,
+    "category": "Sports",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "77777777-7777-7777-7777-777777777777",
+    "title": "Indie Rock Live",
+    "details": "Energetic performances from indie rock bands.",
+    "startDate": "2025-12-20T19:00:00Z",
+    "endDate": "2025-12-20T22:00:00Z",
+    "latitude": 6.0535,
+    "longitude": 80.2209,
+    "category": "Music",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "88888888-8888-8888-8888-888888888888",
+    "title": "Startup Pitch Night",
+    "details": "Local startups pitch ideas to mentors and peers.",
+    "startDate": "2025-12-13T13:00:00Z",
+    "endDate": "2025-12-13T15:00:00Z",
+    "latitude": 6.0329,
+    "longitude": 80.2170,
+    "category": "Tech",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "99999999-9999-9999-9999-999999999999",
+    "title": "Photography Walk",
+    "details": "Golden hour photo walk for enthusiasts.",
+    "startDate": "2025-12-07T16:30:00Z",
+    "endDate": null,
+    "latitude": 7.8731,
+    "longitude": 81.0000,
+    "category": "Arts",
+    "imageName": "Placeholder"
+  },
+  {
+    "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "title": "Basketball 3x3",
+    "details": "Fast-paced half-court games and friendly scrimmages.",
+    "startDate": "2025-12-18T09:00:00Z",
+    "endDate": "2025-12-18T11:00:00Z",
+    "latitude": 6.9080,
+    "longitude": 79.9710,
+    "category": "Sports",
+    "imageName": "Placeholder"
+  }
+]
